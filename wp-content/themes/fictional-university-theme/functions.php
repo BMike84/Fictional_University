@@ -20,3 +20,11 @@ function university_files()
 
 //calling the php function add_action is wordpress build in function
 add_action('wp_enqueue_scripts', 'university_files');
+
+//this to to make a dynamic title tag on the tab on window
+function university_features()
+{
+  add_theme_support('title-tag');
+}
+
+add_action('after_setup_theme', 'university_features');
