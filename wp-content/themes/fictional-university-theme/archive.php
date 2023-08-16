@@ -4,9 +4,21 @@
   <div class="page-banner__bg-image"
     style="background-image: url(<?php echo get_theme_file_uri("/images/ocean.jpg") ?>)"></div>
   <div class="page-banner__content container container--narrow">
-    <h1 class="page-banner__title">Welcome To Our Blog!</h1>
+    <!-- This is to make dymanic title for page if category or author using wordpress function -->
+    <h1 class="page-banner__title">
+      <?php the_archive_title(); ?>
+      <!-- This is old way to do it with regular if statements -->
+      <!-- <?php 
+        if(is_category()) {
+          single_cat_title();
+        } 
+        if (is_author()) {
+          echo "Posts By ";the_author();
+        }
+      ?> -->
+    </h1>
     <div class="page-banner__intro">
-      <p>keep up with our latest news</p>
+      <p><?php the_archive_description(); ?></p>
     </div>
   </div>
 </div>
